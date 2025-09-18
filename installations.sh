@@ -1,0 +1,2 @@
+docker run --name mysql -d -e MYSQL_ALLOW_EMPTY_PASSWORD=1 -e MYSQL_DATABASE=college -e MYSQL_TCP_PORT=3306 -p 3306:3306 mysql:latest
+docker run --name phpmyadmin -d --link mysql:db -p 8080:80 phpmyadmin
