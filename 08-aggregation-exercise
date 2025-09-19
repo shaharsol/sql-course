@@ -1,0 +1,11 @@
+-- from order-details table, calculate the avergae quantity of an order
+SELECT avg(quantity) FROM `order-details`;
+
+-- now calculate the avergae quantity of an order per product ID
+SELECT productId, avg(quantity) FROM `order-details` group by productId;
+
+-- now the same but where the average is between 20 and 40
+SELECT productId, avg(quantity) as avg_quant 
+FROM `order-details` 
+group by productId 
+having avg_quant between 20 and 40;
