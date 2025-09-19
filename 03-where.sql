@@ -9,10 +9,19 @@ SELECT id, name, price FROM products WHERE price > 100 or price < 10;
 -- use between instead of X > y and X < z 
 SELECT id, name, price FROM products WHERE price between 10 and 100;
 
+SELECT id, name, price FROM products WHERE price not between 10 and 100;
+
 -- i can use a scalar function also in the where clause
 SELECT id, name, price FROM products WHERE price > 10 and length(name) < 5;
 
 -- use a single '=' character for equastions:
 SELECT id, name, price FROM products WHERE price > 10 and length(name) = 4;
 
+-- using the like operator
+SELECT id, companyName, fax FROM customers WHERE companyName like '%Alf%';
+
+-- to filter according to NULL values, we use 'is' and 'is not' on null
+SELECT id, fax FROM customers WHERE fax is not null;
+
+SELECT id, fax FROM customers WHERE fax is null;
 
